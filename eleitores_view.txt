@@ -1,0 +1,10 @@
+create view eleitores_view as
+select eleitor.id as 'Código', eleitor.data_cadastro as 'Data_Cadastro', eleitor.cpf as 'CPF', eleitor.nome as 'Eleitor', 
+eleitor.telefone as 'Telefone', eleitor.endereco as 'Endereço', eleitor.bairro as 'Bairro',
+eleitor.cep as 'CEP', eleitor.email as 'E-Mail', eleitor.titulo as 'Título', eleitor.secao as 'Seção', eleitor.zona as 'Zona',
+eleitor.colegio as 'Colégio', eleitor.genero as 'Gênero', lider.nome as 'Líder'
+from eleitor
+join lider
+on 
+eleitor.id_lider = lider.id
+order by Código;

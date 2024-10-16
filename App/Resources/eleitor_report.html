@@ -1,0 +1,46 @@
+<table id="tabela" class="table table-bordered" width="100%">
+    <tr bgcolor="#3484f7" style="color:white">
+        <td align="center">Líderes</td>
+        <td align="center">Meta</td>
+        <td align="center">Realizado</td>
+        <td align="center">Diferença</td>
+    </tr>
+  {% for eleitores in eleitor %}
+  <tr>
+      <td align="left"> {{eleitores.nome}} </td>
+      <td align="center" class="meta"> {{eleitores.Objetivo}} </td>
+      <td align="center" class="realizado"> {{eleitores.Realizados}} </td>
+      <td align="center" class="resultado"></td>
+  </tr>
+
+  {% endfor %}
+</table>
+
+<script src="App/Templates/js/scripts.js"></script>
+
+<script>
+  // Função para calcular a diferença entre a meta e o realizado
+  function calcularDiferenca() {
+      // Seleciona todas as células com a classe "resultado"
+      var resultados = document.querySelectorAll('.resultado');
+      
+      // Itera sobre cada célula
+      resultados.forEach(function(resultado) {
+          // Obtém os valores da meta e do realizado das células correspondentes
+          var meta = parseFloat(resultado.parentElement.querySelector('.meta').textContent);
+          var realizado = parseFloat(resultado.parentElement.querySelector('.realizado').textContent);
+          
+          // Calcula a diferença
+          var diferenca = meta - realizado;
+          
+          // Define o texto da célula de resultado como a diferença calculada
+          resultado.textContent = diferenca.toFixed(0); // Ajusta o número de casas decimais conforme necessário
+      });
+  }
+
+  // Chama a função para calcular a diferença quando o documento é carregado
+  window.onload = function() {
+      calcularDiferenca();
+  };
+</script>
+<script src="App/Templates/js/scripts.js"></script>

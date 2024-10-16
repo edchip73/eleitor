@@ -1,0 +1,42 @@
+<table id="tabela" class="table table-bordered" width="100%">
+    <tr bgcolor="#3484f7" style="color:white">
+        <td align="center">Código</td>
+        <td align="center">Data de Cadastro</td>
+        <td align="center">CPF</td>
+        <td align="center">Eleitor</td>
+        <td align="center">Telefone</td>
+        <td align="center">Endereço</td>
+        <td align="center">Bairro</td>
+        <td align="center">Cep</td>
+        <td align="center">Email</td>
+        <td align="center">Título</td>
+        <td align="center">Seção</td>
+        <td align="center">Zona</td>
+        <td align="center">Colégio</td>
+        <td align="center">Gênero</td>
+        <td align="center">Líder</td>
+
+    </tr>
+  {% for eleitores in eleitor %}
+  <tr>
+      <td align="center" class="Código"> {{eleitores.Código}} </td>
+      <td align="center" class="Data de Cadastro"> {{eleitores.Data_Cadastro|date("d/m/Y")}} </td>
+      <td align="center" class="CPF"> {{eleitores.CPF}} </td>
+      <td align="center" class="Nome"> {{eleitores.Eleitor}} </td>
+      <td align="center" class="Telefone"> {{eleitores.Telefone}} </td>
+      <td align="center" class="Endereço"> {{eleitores.Endereço}} </td>
+      <td align="center" class="Bairro"> {{eleitores.Bairro}} </td>
+      <td align="center" class="Cep"> {{eleitores.CEP}} </td>
+      <td align="center" class="Email"> {{eleitores.Email}} </td>
+      <td align="center" class="Título"> {{eleitores.Título}} </td>
+      <td align="center" class="Seção"> {{eleitores.Seção}} </td>
+      <td align="center" class="Zona"> {{eleitores.Zona}} </td>
+      <td align="center" class="Colégio"> {{eleitores.Colégio}} </td>
+      <td align="center" class="Gênero"> {{eleitores.Gênero}} </td>
+      <td align="center" class="Líder"> {{eleitores.Líder}} </td>
+     
+      
+  </tr>
+
+  {% endfor %}
+</table>
